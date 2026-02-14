@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Rinaya Amalia Jahra sayangkuuu cintaakuu 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: #e91e63;
+    }
+
+    p {
+      font-size: 16px;
+    }
+    .container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cute-img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#noBtn {
+  background-color: #f44336;
+  color: white;
+}
+.music-btn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #e91e63;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.buttons {
+  position: relative;
+  height: 60px;
+}
+
+#noBtn {
+  position: absolute;
+}
+
+.music-btn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #e91e63;
+  color: white;
+  cursor: pointer;
+}
+.gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 10px;
+  max-width: 100%;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery img {
+  flex: 0 0 75%;
+  max-width: 75%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  scroll-snap-align: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.hint {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* ❤️ animasi hati */
+.heart {
+  position: fixed;
+  bottom: 50%;
+  font-size: 22px;
+  animation: floatUp 1.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-80px) scale(1.5);
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+<audio id="bgMusic" src="di-ujung-doa.mp3" loop></audio>
+
+  <body>
+
+<audio id="bgMusic" src="di-ujung-doa.mp3" loop></audio>
+
+<div id="page1" class="container">
+  <img src="love.png" class="cute-img" alt="love">
+
+  <h1>Rinaya Amalia Jahra 💕</h1>
+  <p>Will you be my Valentine? 💖</p>
+
+  <div class="buttons">
+    <button id="yesBtn">Yes 💘</button>
+    <button id="noBtn">No 💔</button>
+  </div>
+
+  <button id="playMusic" class="music-btn">▶️ Putar Lagu</button>
+</div>
+
+<div id="page2" class="container" style="display:none;">
+  <h1>YEAYYY 💖</h1>
+  <p>Makasiii yaaaa sayangkuuu 🤍</p>
+  <p>Hai sayanggg 🤍
+
+Aku nggak jago ngerangkai kata, tapi aku jago ngerasain.
+Setiap hari sama kamu itu rasanya tenang, hangat, dan penuh arti.
+
+Kalau dunia lagi capek, kamu adalah tempat aku pulang.
+Kalau aku lagi jatuh, kamu adalah alasan aku berdiri lagi.
+
+Terima kasih ya, sayanggg…
+sudah mau jalan bareng aku, sejauh ini dan sejauh nanti 💕
+
+Aku nggak janji sempurna,
+tapi aku janji selalu milih kamu, lagi dan lagi ❤️ 💞</p>
+  <div class="gallery">
+  <img src="foto1.jpeg">
+  <img src="foto2.jpeg">
+  <img src="foto3.jpeg">
+  <img src="foto4.jpeg">
+</div>
+
+<p class="hint">Geser fotonya ya 🤍</p>
+
+</div>
+
+</body>
+</body>
+<script>
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const page1 = document.getElementById("page1");
+  const page2 = document.getElementById("page2");
+  const music = document.getElementById("bgMusic");
+  const playBtn = document.getElementById("playMusic");
+
+  // tombol NO kabur
+  noBtn.addEventListener("mouseenter", () => {
+    const maxX = 200;
+    const maxY = 80;
+    const x = Math.random() * maxX - maxX / 2;
+    const y = Math.random() * maxY - maxY / 2;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  // YES pindah halaman
+  yesBtn.addEventListener("click", () => {
+    page1.style.display = "none";
+    page2.style.display = "flex";
+  });
+
+  // musik
+  playBtn.addEventListener("click", () => {
+    music.play();
+    playBtn.innerText = "🎵 Lagu Diputar";
+    playBtn.disabled = true;
+  });
+  // ❤️ animasi hati saat swipe galeri
+const gallery = document.querySelector(".gallery");
+
+gallery.addEventListener("scroll", () => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "❤️";
+
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 1200);
+});
+
+</script>
+</html>
