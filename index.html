@@ -329,7 +329,64 @@ function saveAnswer() {
   document.getElementById("savedAnswer").innerText =
     "Jawaban kamu: 💖 " + text;
 }
+  function saveAnswer() {
+  const text = document.getElementById("herAnswer").value;
+  document.getElementById("savedAnswer").innerText =
+    "Jawaban kamu: 💖 " + text;
+}
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("jawabanSayang");
+  if (saved) {
+    document.getElementById("herAnswer").value = saved;
+    document.getElementById("savedAnswer").innerText =
+      "Jawaban kamu sebelumnya 💖: " + saved;
+  }
+});
+document.getElementById("herAnswer").addEventListener("input", (e) => {
+  const val = e.target.value.toLowerCase();
+
+  if (val.includes("iya") || val.includes("yes")) {
+    showReaction("YEAYYY 😆💖 aku seneng banget!");
+  }
+
+  if (val.includes("sayang")) {
+    showReaction("eh dipanggil sayanggg 🥹🤍");
+  }
+
+  if (val.includes("engga") || val.includes("no")) {
+    showReaction("eh kok gitu 😭 bercanda kan?");
+  }
+});
+
+function showReaction(text) {
+  const bubble = document.createElement("div");
+  bubble.innerText = text;
+  bubble.style.position = "fixed";
+  bubble.style.bottom = "20px";
+  bubble.style.left = "50%";
+  bubble.style.transform = "translateX(-50%)";
+  bubble.style.background = "#ff5c8a";
+  bubble.style.color = "white";
+  bubble.style.padding = "10px 18px";
+  bubble.style.borderRadius = "20px";
+  bubble.style.zIndex = "999";
+  document.body.appendChild(bubble);
+
+  setTimeout(() => bubble.remove(), 2000);
+}
+let tapCount = 0;
+const secretTitle = document.getElementById("secretTitle");
+
+secretTitle.addEventListener("click", () => {
+  tapCount++;
+  if (tapCount === 5) {
+    alert("EHEMMM 😆 ketahuan kepo! Aku sayang kamu 🤍");
+    tapCount = 0;
+  }
+});
+
 
 </script>
 </html>
+
 
